@@ -1,0 +1,32 @@
+<div class="container">
+
+<h2>Ventas</h2>
+<%= form_with model: Sale, class:"form-horizontal", local: true do |f|%>
+<div class="form-group">
+  <%=f.label "Codigo"%>
+  <%=f.number_field :cod%>
+</div>
+<div class="form-group">
+  <%=f.label "detalle"%>
+  <%=f.text_area :detail%>
+</div>
+<div class="form-group">
+  <%=f.label "categoria"%>
+  <%=f.text_field :category%>
+  </div>
+<div class="form-group">
+  <%=f.label "valor"%>
+  <%=f.number_field :value%>
+</div>
+<div class="form-group">
+  <%=f.label "descuento"%>
+  <%=f.number_field :discount%>
+</div>
+<div class="form-group">
+  <%=f.label "Exento de IVA"%>
+  <%=f.check_box :tax%>
+</div>
+<%=f.submit "Enviar"%>
+<% end %>
+
+</div>
