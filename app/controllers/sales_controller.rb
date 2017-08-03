@@ -11,7 +11,10 @@ class SalesController < ApplicationController
     end
       puts @sales.total
     @sales.save
-    redirect_to sales_new_path
+    redirect_to sales_path
+  end
+  def done
+    @sales = Sale.all
   end
 
   private
