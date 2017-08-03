@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801233535) do
+ActiveRecord::Schema.define(version: 20170803160625) do
 
   create_table "sales", force: :cascade do |t|
     t.integer "cod"
     t.string "detail"
-    t.integer "category"
+    t.string "category"
     t.integer "value"
     t.integer "discount"
     t.integer "tax"
