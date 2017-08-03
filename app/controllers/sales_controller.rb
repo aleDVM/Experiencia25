@@ -4,7 +4,6 @@ class SalesController < ApplicationController
   end
 
   def create
-
     @sales = Sale.new(sale_params)
     puts @sales.category
     if @sales.tax == 1
