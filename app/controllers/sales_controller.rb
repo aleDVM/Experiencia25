@@ -3,17 +3,18 @@ class SalesController < ApplicationController
     @sales = Sale.new
   end
 
-  def create
-    @sales = Sale.new(sale_params)
-    puts @sales.category
-    if @sales.tax == 1
-      @sales.total = @sales.value - (@sales.value * @sales.discount / 100)
+def create
+    @sale = Sale.new(sale_params) 
+      
+    if @sale.tax != 1
+      @sale.total = (@sale.value - (@sale.value*@sale.discount/100))*1.19
     else
-      @sales.total = (@sales.value - (@sales.value * @sales.discount / 100)) * 1.19
+      @sale.total = @sale.value - (@sale.value*@sale.discount/100)
+    end 
+    
+    if @sale.save
+      redirect_to sales_done_path
     end
-    puts @sales.total
-    @sales.save
-    redirect_to sales_path
   end
 
   def done
